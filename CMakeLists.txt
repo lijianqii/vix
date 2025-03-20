@@ -12,6 +12,7 @@ find_package(glog REQUIRED)
 
 add_executable(vix main.cpp)
 target_link_libraries(vix glog::glog)
+target_link_libraries(vix vix_server)
 
 include(CTest)
 enable_testing()
