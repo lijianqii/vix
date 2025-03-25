@@ -1,6 +1,8 @@
 #ifndef __VIX_SERVER_H
 #define __VIX_SERVER_H
 
+#include "vix_config.hpp"
+
 namespace vix {
 class VixServer {
 private:
@@ -8,6 +10,7 @@ private:
   std::string _bind;
   std::string _ipv4;
   unsigned short _port;
+  vix::VixConfig *_config;
 
 public:
   VixServer(std::string server_name);

@@ -4,6 +4,7 @@
 #include <regex>
 #include <string>
 
+#include "vix_config.hpp"
 #include "vix_server.hpp"
 
 vix::VixServer::VixServer(std::string server_name) {
