@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/output/bin)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/output/libs)
+set(DEFAULT_CONFIG_PATH ${CMAKE_SOURCE_DIR}/output/configs)
 
 set(CMAKE_INSTALL_RPATH "../libs")  # 可执行文件上一级的 lib 目录
 set(CMAKE_BUILD_RPATH "${LIBRARY_OUTPUT_PATH}")  # 构建时的路径
@@ -16,6 +17,10 @@ set(CMAKE_BUILD_RPATH "${LIBRARY_OUTPUT_PATH}")  # 构建时的路径
 set(CMAKE_SKIP_BUILD_RPATH FALSE)
 set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
+file(COPY ${CMAKE_SOURCE_DIR}/server/config/default_configs.json
+     DESTINATION ${DEFAULT_CONFIG_PATH}
+)
 
 add_subdirectory(./server)
 
