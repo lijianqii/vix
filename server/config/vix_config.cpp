@@ -16,10 +16,10 @@ vix::VixConfig::~VixConfig() {
 }
 
 unsigned short vix::VixConfig::get_port() {
-    unsigned int port = this->_config_json.FindMember("port")->value.GetUint();
+    int port = this->_config_json.FindMember("port")->value.GetInt();
     if (port >= 1 && port < 1023) {
         LOG(WARNING) << "Port " << port << " may need ROOT to bind.";
-    } else if (port > (unsigned short)-1) {
+    } else if (port > (unsigned short)-1 || port < 1) {
         LOG(WARNING) << "Port " << port << " is inlegal, change to default: 12345.";
         port = 12345;
     } else {
