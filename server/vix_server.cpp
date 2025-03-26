@@ -15,9 +15,10 @@ vix::VixServer::VixServer(std::string server_name) {
   LOG(INFO) << "Server(" << this->_server_name << "): Initializing.";
 }
 
-int vix::VixServer::bind(const char *bind) {
-  this->_config = new vix::VixConfig(bind);
+int vix::VixServer::bind(const char *path) {
+  this->_config = new vix::VixConfig();
 
+  this->_config->suck_in_configs(path);
   this->_port = this->_config->get_port();
   this->_ipv4 = this->_config->get_ipv4();
 

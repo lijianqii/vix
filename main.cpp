@@ -1,9 +1,8 @@
-#include <string>
 #include "vix_server.hpp"
 
-int main(int, char **) {
+int main(int argc, char *argv[]) {
   vix::VixServer server("vix");
 
-  server.bind("127.0.0.1:12345");
+  server.bind("default");
   return server.vix_shell();
 }

@@ -15,7 +15,7 @@ private:
 public:
   VixServer(std::string server_name);
   ~VixServer();
-  int bind(const char *bind);
+  int bind(const char *path);
   int vix_shell();
 };
 } // namespace vix

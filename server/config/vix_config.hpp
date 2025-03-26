@@ -9,10 +9,10 @@ private:
   rapidjson::Document _config_json;
 
 public:
-  VixConfig(std::string path);
+  VixConfig();
   ~VixConfig();
 
-  bool suck_in_configs();
+  bool suck_in_configs(const char *path);
   unsigned short get_port();
   std::string get_ipv4();
 };
